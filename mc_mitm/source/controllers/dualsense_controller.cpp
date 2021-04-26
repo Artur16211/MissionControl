@@ -57,8 +57,8 @@ namespace ams::controller {
     }
 
     Result DualsenseController::SetVibration(const SwitchRumbleData *rumble_data) {
-        m_rumble_state.amp_motor_left  = static_cast<uint8_t>(255 * rumble_data->low_band_amp);
-        m_rumble_state.amp_motor_right = static_cast<uint8_t>(255 * rumble_data->high_band_amp);
+        m_rumble_state.amp_motor_left  = static_cast<uint8_t>(100 * rumble_data->low_band_amp);
+        m_rumble_state.amp_motor_right = static_cast<uint8_t>(100 * rumble_data->high_band_amp);
         return this->PushRumbleLedState();
     }
 
